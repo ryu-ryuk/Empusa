@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><empusa-file-conv></empusa-file-conv></title>
+</head>
+<body>
+    <h1>Empusa</h1>
+
+    <h2>Convert Fonts</h2>
+    <form action="/convert-fonts" method="POST" enctype="multipart/form-data">
+        <input type="file" name="fonts[]" multiple accept=".otf" required>
+        <button type="submit">Convert Fonts</button>
+    </form>
+
+    <h2>Compress PDF</h2>
+    <form action="/compress-pdf" method="POST" enctype="multipart/form-data">
+        <input type="file" name="input_pdf" accept=".pdf" required>
+        <input type="text" name="output_pdf" placeholder="Output PDF Name" required>
+        <button type="submit">Compress PDF</button>
+    </form>
+
+    <h2>Convert Image</h2>
+    <form action="/convert-image" method="POST" enctype="multipart/form-data">
+        <input type="file" name="input_image" accept=".jpg, .jpeg, .png" required>
+        <input type="text" name="output_format" placeholder="Output Format (jpg, png)" required>
+        <button type="submit">Convert Image</button>
+    </form>
+</body>
+</html>
