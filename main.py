@@ -67,7 +67,7 @@ def convert_image_route():
         input_image.save(input_image_path)  
 
         # Ensure the output format is valid
-        valid_formats = ['JPEG', 'PNG', 'GIF', 'BMP', 'TIFF']  # Add valid formats as needed
+        valid_formats = ['JPEG', 'PNG', 'GIF', 'BMP', 'TIFF'] 
         if output_format not in valid_formats:
             return "Invalid output format. Supported formats: " + ", ".join(valid_formats), 400
 
@@ -86,7 +86,8 @@ def convert_image_route():
 def download_file(filename):
     try:
         directory = os.path.dirname(filename)
-        return send_from_directory(directory, os.path.basename(filename), as_attachment=True)
+        return send_from_directory('uploads/images', filename, as_attachment=True)
+
     
     except Exception as e:
         return str(e), 500  # Return the error message for debugging

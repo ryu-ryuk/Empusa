@@ -9,7 +9,7 @@
     <h1>downloaded</h1>
     <ul>
         {% for file in files %}
-            <li><a href="{{ url_for('download_file', filename=file) }}">{{ file }}</a></li>
+        <li><a href="{{ url_for('download_file', filename=file.split('/')[-1]) }}">{{ file.split('/')[-1] }}</a></li>
         {% endfor %}
     </ul>
     <a href="/">Go Back</a>

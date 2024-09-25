@@ -1,14 +1,40 @@
-from fontTools.ttLib import TTFont
 import os
+from fontTools.ttLib import TTFont
+from flask import request, render_template
 
+def convert_fonts():
+    try:
+        files = request.files.getlist('fonts')  # Get the list of uploaded font files
+        output_paths = []  # Store the paths of converted fonts
+        
+        # Ensure the 'uploads/fonts' directory exists
+        if not os.path.exists('uploads/fonts'):
+            os.makedirs('uploads/fonts')
+        
+        # Save uploaded font files
+        for font_file in files:
+            font_file.save(os.path.join('uploads/fonts', font_file.filename))
+        
+        # Process the saved files for conversion
+        convert_fonts_in_directory('uploads/fonts')
+        
+        # Collect the converted file paths
+        for filename in os.listdir('uploads/fonts'):
+            if filename.endswith('.ttf') or filename.endswith('.otf'):  # Include .ttf and .otf
+                output_paths.append(os.path.join('uploads/fonts', filename))
+        
+        # Render the download page with the list of converted files
+        return render_template('download.html', files=output_paths)
+    
+    except Exception as e:
+        return str(e), 500  # Return error if exception occurs
+
+# Font conversion helper functions
 def convert_fonts_in_directory(directory):
-    # Iterate through all files in the provided directory
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
-        # Check for .otf files
         if filename.endswith(".otf"):
             convert_otf_to_ttf(file_path)
-        # Check for .ttf files
         elif filename.endswith(".ttf"):
             convert_ttf_to_otf(file_path)
 

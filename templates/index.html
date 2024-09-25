@@ -23,9 +23,16 @@
 
     <h2>Convert Image</h2>
     <form action="/convert-image" method="POST" enctype="multipart/form-data">
-        <input type="file" name="input_image" accept=".jpg, .jpeg, .png" required>
-        <input type="text" name="output_format" placeholder="Output Format (jpg, png)" required>
-        <button type="submit">Convert Image</button>
-    </form>
+        <label for="output_format">Select output format:</label>
+        <select name="output_format" id="output_format">
+            <option value="JPEG">JPEG</option>
+            <option value="PNG">PNG</option>
+            <option value="GIF">GIF</option>
+            <option value="BMP">BMP</option>
+            <option value="TIFF">TIFF</option>
+        </select>
+        <input type="file" name="input_image" />
+        <input type="submit" value="Convert">
+    </form>    
 </body>
 </html>
