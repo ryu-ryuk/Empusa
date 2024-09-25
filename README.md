@@ -34,6 +34,7 @@ As of today, the following features are operational:
 - **CLI Interface Tool 💻**: I am actively working on transforming this project into a command-line interface tool for easy use across platforms.
 - **Custom Compression Options 🔍**: Fine-tune compression for images and PDFs (low, medium, high).
 - **Additional Conversion Formats 🛠️**: More file types such as DOCX, XLSX, and more image/audio formats will be supported soon.
+- **Refinements**: Refine and properly document about the tool's function and usage on both windows and linux using scripts.
 
 ## Getting Started 🚀
 1. Clone the repository: 
