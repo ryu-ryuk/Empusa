@@ -23,7 +23,6 @@ A web application for converting files between various formats (e.g., images, fo
   - Fonts: **TTF ➡️ OTF** conversion.
   - Images: Supports conversion between **JPEG**, **PNG**, **GIF**, **BMP**, and **TIFF** formats.
   - PDF Compression: Compress PDFs with different size options.
-- **Cloud Storage Integration ☁️**: Empusa integrates with AWS S3 or Google Cloud Storage to store and manage your converted files.
 
 ## Current Limitations 🚧
 As of today, the following features are operational:
@@ -37,6 +36,9 @@ As of today, the following features are operational:
 - **Additional Conversion Formats 🛠️**: More file types such as DOCX, XLSX, and more image/audio formats will be supported soon.
 - **Refinements**: Refine and properly document about the tool's function and usage on both windows and linux using scripts.
 
+- **Cloud Storage Integration ☁️**: Empusa will integrate with AWS S3 or Google Cloud Storage to store and manage your converted files.
+ 
+- 
 ## Getting Started 🚀
 1. Clone the repository: 
     ```bash
