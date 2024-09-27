@@ -56,4 +56,4 @@ Work on the CLI tool and additional file format conversions is in progress. Keep
 
 ---
 
-Built with ❤️♡ by [ryu-ryuk](https://github.com/ryu-ryuk)
+Built with ♡ by [ryu-ryuk](https://github.com/ryu-ryuk)
